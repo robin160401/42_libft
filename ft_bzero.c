@@ -6,7 +6,7 @@
 /*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:37:09 by rstumpf           #+#    #+#             */
-/*   Updated: 2024/11/06 20:40:39 by rstumpf          ###   ########.fr       */
+/*   Updated: 2024/12/17 13:27:23 by rstumpf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-int main(){
-    char string[] = "12345";
-    ft_bzero(string, 5);
-    printf("%s\n", string);
-}
+// int main(){
+//     char string[] = "12345";
+//     ft_bzero(string, 5);
+//     printf("%s\n", string);
+// }
