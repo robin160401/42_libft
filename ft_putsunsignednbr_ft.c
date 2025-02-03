@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putsunsignednbr_ft.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 18:48:43 by rstumpf           #+#    #+#             */
-/*   Updated: 2025/02/03 17:25:55 by rstumpf          ###   ########.fr       */
+/*   Created: 2024/10/20 14:38:59 by rstumpf           #+#    #+#             */
+/*   Updated: 2025/02/03 18:08:51 by rstumpf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putendl_fd(char *s, int fd)
+int	ft_putunsignednbr_fd(int n, int fd)
 {
-	int	count;
+	unsigned int	num;
+	int				count;
+	int				check_error;
 
 	count = 0;
-	while (*s)
+	check_error = 0;
+	num = (unsigned int) n;
+	if (num >= 10)
 	{
-		count += write(fd, s, 1);
-		s++;
+		check_error = ft_putnbr_fd(num / 10, fd);
+		if (check_error == -1)
+			return (-1);
+		count += check_error;
 	}
-	count += write(fd, "\n", 1);
+	check_error = ft_putchar_fd((num % 10) + '0', fd);
+	if (check_error == -1)
+		return (-1);
+	count += check_error;
 	return (count);
 }
