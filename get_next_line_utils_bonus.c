@@ -6,7 +6,7 @@
 /*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:56:39 by rstumpf           #+#    #+#             */
-/*   Updated: 2025/02/04 10:18:43 by rstumpf          ###   ########.fr       */
+/*   Updated: 2025/02/04 14:49:33 by rstumpf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,17 +96,4 @@ char	*ft_createline(char *buffer)
 	}
 	output_line[i] = '\0';
 	return (output_line);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*p;
-
-	p = (unsigned char *)s;
-	while (n > 0)
-	{
-		*p = 0;
-		p++;
-		n--;
-	}
 }
