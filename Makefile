@@ -1,6 +1,8 @@
 CC				= gcc
-RM				= rm -f
+RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror -I.
+OBJDIR			= obj
+
 SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
 					ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
@@ -15,23 +17,31 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 					get_next_line_bonus.c get_next_line_utils_bonus.c \
 
 OBJS			= $(SRCS:.c=.o)
+OBJS			:= $(addprefix $(OBJDIR)/, $(OBJS))
 
 NAME			= libft.a
 
-all:			$(NAME)
+all:			$(OBJDIR) $(NAME)
+
+# Ensure obj/ directory exists
+$(OBJDIR):
+				@mkdir -p $(OBJDIR)
+
+# Compile .o files inside obj/
+$(OBJDIR)/%.o:	%.c | $(OBJDIR)
+				$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+				@echo "Cleaning object files..."
+				$(RM) $(OBJDIR)
 
 fclean:			clean
+				@echo "Removing $(NAME)..."
 				$(RM) $(NAME)
 
-re:				fclean $(NAME)
+re:				fclean all
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-.PHONY:			all clean fclean re bonus+
+.PHONY:			all clean fclean re bonus
