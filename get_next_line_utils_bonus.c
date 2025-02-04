@@ -6,68 +6,11 @@
 /*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:56:39 by rstumpf           #+#    #+#             */
-/*   Updated: 2025/02/04 14:49:33 by rstumpf          ###   ########.fr       */
+/*   Updated: 2025/02/04 14:50:54 by rstumpf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
-{
-	if (s == NULL)
-		return (NULL);
-	while (*s != '\0')
-	{
-		if (*s == (char) c)
-		{
-			return ((char *)s);
-		}
-		s++;
-	}
-	if ((char) c == '\0')
-		return ((char *)s);
-	return (NULL);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*p;
-	int		i;
-	int		j;
-
-	if (!s1 || !s2)
-		return (NULL);
-	p = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
-	if (!p)
-		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		p[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[j] != '\0')
-	{
-		p[i + j] = s2[j];
-		j++;
-	}
-	p[i + j] = '\0';
-	return (p);
-}
-
-size_t	ft_strlen(const char *string)
-{
-	int	i;
-
-	i = 0;
-	while (*string != '\0')
-	{
-		string++;
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_createline(char *buffer)
 {
