@@ -6,7 +6,7 @@
 /*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 12:57:38 by rstumpf           #+#    #+#             */
-/*   Updated: 2025/02/04 12:39:46 by rstumpf          ###   ########.fr       */
+/*   Updated: 2025/02/07 19:46:46 by rstumpf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
-size_t				ft_strlen(const char *string);
+int					ft_strlen(const char *string);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_isalnum(int c);
