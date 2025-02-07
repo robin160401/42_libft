@@ -1,6 +1,6 @@
 CC				= gcc
 RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror -I. -fsanitize=address -g
+CFLAGS			= -Wall -Wextra -Werror -I.
 OBJDIR			= obj
 
 SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
