@@ -6,7 +6,7 @@
 /*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:34:03 by rstumpf           #+#    #+#             */
-/*   Updated: 2024/10/23 20:49:52 by rstumpf          ###   ########.fr       */
+/*   Updated: 2025/02/08 19:25:15 by rstumpf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	ft_fillarrays(char const *s, char c, int i, char **array)
 			s++;
 			continue ;
 		}
-		start = s;
+		start = (char *)s;
 		len = 0;
 		while (*s != c && *s)
 		{
@@ -80,6 +80,9 @@ char	**ft_split(char const *s, char c)
 	int			i;
 
 	i = 0;
+
+	if (!s)
+		return (NULL);
 	strings_number = ft_countstrings(s, c);
 	array = (char **)malloc((strings_number + 1) * sizeof(char *));
 	if (!array)
