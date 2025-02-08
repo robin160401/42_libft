@@ -6,7 +6,7 @@
 /*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:50:18 by rstumpf           #+#    #+#             */
-/*   Updated: 2025/02/03 17:26:53 by rstumpf          ###   ########.fr       */
+/*   Updated: 2025/02/08 19:05:57 by rstumpf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_update_leftover(char *leftover)
 
 char	*get_next_line(int fd)
 {
-	static char	leftover[OPEN_MAX][BUFFER_SIZE + 1];
+	static char	leftover[100][BUFFER_SIZE + 1];
 	char		*output;
 	char		*new_output;
 
