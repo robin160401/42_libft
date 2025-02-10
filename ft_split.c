@@ -6,7 +6,7 @@
 /*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:34:03 by rstumpf           #+#    #+#             */
-/*   Updated: 2025/02/08 19:25:15 by rstumpf          ###   ########.fr       */
+/*   Updated: 2025/02/10 14:46:05 by rstumpf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 static int	ft_countstrings(char const *s, char c)
 {
 	int	counter;
-	int	bool;
+	int	flag;
 
-	bool = 0;
+	flag = 0;
 	counter = 0;
 	while (*s)
 	{
 		if (*s == c)
-			bool = 0;
-		else if (*s != c && !bool)
+			flag = 0;
+		else if (*s != c && !flag)
 		{
 			counter++;
-			bool = 1;
+			flag = 1;
 		}
 		s++;
 	}
